@@ -3,11 +3,11 @@
 <form>
     <label>
         <span class="title">Title</span>
-        <input type="text" minlength="3" required [(ngModel)]="title" />
+        <input type="text" name="title" minlength="3" required [(ngModel)]="title" />
     </label>
     <label>
         <span class="title">Description</span>
-        <textarea rows="3" [(ngModel)]="description"></textarea>
+        <textarea name="description" rows="3" [(ngModel)]="description"></textarea>
     </label>
     <div class="actions">
         <a class="ghost default cancel" routerLink="/">Cancel</a>

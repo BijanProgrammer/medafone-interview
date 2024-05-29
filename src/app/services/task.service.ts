@@ -6,26 +6,33 @@ import {TaskModel} from '../models/task.model';
     providedIn: 'root',
 })
 export class TaskService {
-    public constructor() {}
+    public constructor() {
+        this.addSampleTask();
+    }
 
-    private _tasks: TaskModel[] = [
-        {
-            id: self.crypto.randomUUID(),
-            title: 'Sample Task',
-            description: 'This is a sample task. You can edit it or remove it completely.',
-        },
-    ];
+    private _tasks: TaskModel[] = [];
 
     public get tasks(): TaskModel[] {
         return [...this._tasks];
     }
 
     public findById(id: string): TaskModel | null {
-        return this.tasks.find((task) => task.id === id) ?? null;
+        return this._tasks.find((task) => task.id === id) ?? null;
     }
 
-    public addTask(task: TaskModel): void {
+    public addTask(task: Omit<TaskModel, 'id'>): void {
         // [BIJAN] TODO: Add validation here or before this method is called.
-        this._tasks.push(task);
+
+        this._tasks.push({
+            ...task,
+            id: self.crypto.randomUUID(),
+        });
+    }
+
+    private addSampleTask(): void {
+        this.addTask({
+            title: 'Sample Task',
+            description: 'This is a sample task. You can edit it or remove it completely.',
+        });
     }
 }
