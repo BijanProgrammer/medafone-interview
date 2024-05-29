@@ -1,6 +1,6 @@
-<h1>{{ isEditing ? 'Edit Task' : 'Add a New Task' }}</h1>
+<h1>{{ !!id ? 'Edit Task' : 'Add a New Task' }}</h1>
 
-<form>
+<form (ngSubmit)="formSubmitHandler()">
     <label>
         <span class="title">Title</span>
         <input type="text" name="title" minlength="3" required [(ngModel)]="title" />

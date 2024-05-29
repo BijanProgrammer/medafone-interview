@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 
 import {TaskModel} from '../models/task.model';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable({
     providedIn: 'root',
 })
 export class TaskService {
-    public constructor() {
+    public constructor(private toastr: ToastrService) {
         this.addSampleTask();
     }
 
@@ -20,9 +21,18 @@ export class TaskService {
         return this._tasks.find((task) => task.id === id) ?? null;
     }
 
-    public addTask(task: Omit<TaskModel, 'id'>): void {
-        // [BIJAN] TODO: Add validation here or before this method is called.
+    public editTask(task: TaskModel): boolean {
+        const existingTaskIndex = this._tasks.findIndex((x) => x.id === task.id);
+        if (existingTaskIndex < 0) {
+            this.toastr.error('Cannot edit a task that does not exist.');
+            return false;
+        }
 
+        this._tasks[existingTaskIndex] = task;
+        return true;
+    }
+
+    public addTask(task: Omit<TaskModel, 'id'>): void {
         this._tasks.push({
             ...task,
             id: self.crypto.randomUUID(),
