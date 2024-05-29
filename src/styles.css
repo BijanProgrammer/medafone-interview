@@ -27,6 +27,9 @@
     --color-danger-fade: hsl(350deg 10% 95%);
     --color-danger-opposite: var(--color-gray-98);
 
+    --color-body-background: var(--color-primary-fade);
+    --color-body-foreground: var(--color-gray-10);
+
     --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
     --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
 
@@ -92,8 +95,8 @@ img {
 }
 
 body {
-    background-color: var(--color-primary-fade);
-    color: var(--color-gray-10);
+    background-color: var(--color-body-background);
+    color: var(--color-body-foreground);
 
     font-size: 1.6rem;
 }

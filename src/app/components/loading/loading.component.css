@@ -1,0 +1,17 @@
+.container {
+    background-color: var(--color-body-background);
+    color: var(--color-body-foreground);
+
+    position: fixed;
+    inset: 0;
+
+    display: grid;
+    place-content: center;
+
+    block-size: 100%;
+    inline-size: 100%;
+
+    .message {
+        font-size: 2.4rem;
+    }
+}
