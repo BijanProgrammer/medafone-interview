@@ -5,11 +5,11 @@
     <ul>
         @for (task of taskService.tasks; track task.id) {
             <li>
-                <div class="title">{{ task.title }}</div>
+                <div class="title truncate">{{ task.title }}</div>
                 <div class="description">{{ task.description }}</div>
                 <div class="actions">
-                    <button class="edit">Edit</button>
-                    <button class="remove">Remove</button>
+                    <button class="solid primary edit">Edit</button>
+                    <button class="outline danger remove">Remove</button>
                 </div>
             </li>
         }

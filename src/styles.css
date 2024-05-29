@@ -11,11 +11,17 @@
     --color-gray-10: hsl(0deg 0% 10%);
     --color-black: hsl(0deg 0% 0%);
 
-    --color-primary: hsl(160deg 50% 30%);
-    --color-primary-lighter: hsl(160deg 50% 34%);
-    --color-primary-darker: hsl(160deg 50% 26%);
-    --color-primary-fade: hsl(160deg 10% 90%);
+    --color-primary: hsl(190deg 50% 30%);
+    --color-primary-lighter: hsl(190deg 50% 34%);
+    --color-primary-darker: hsl(190deg 50% 20%);
+    --color-primary-fade: hsl(190deg 10% 95%);
     --color-primary-opposite: var(--color-gray-98);
+
+    --color-danger: hsl(350deg 70% 50%);
+    --color-danger-lighter: hsl(350deg 70% 54%);
+    --color-danger-darker: hsl(350deg 70% 40%);
+    --color-danger-fade: hsl(350deg 10% 95%);
+    --color-danger-opposite: var(--color-gray-98);
 
     --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
     --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
@@ -27,9 +33,10 @@
     --full-width: 120rem;
     --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
 
-    --animation-duration-fast: 0.2s;
-    --animation-duration-normal: 0.5s;
-    --animation-duration-slow: 1s;
+    --animation-duration-100: 0.1s;
+    --animation-duration-400: 0.2s;
+    --animation-duration-700: 0.5s;
+    --animation-duration-900: 1s;
 }
 
 *,
@@ -111,7 +118,7 @@ a.link {
 
         transform: scaleX(0);
 
-        transition: var(--animation-duration-fast) ease-in-out;
+        transition: var(--animation-duration-100) ease-in-out;
         transition-property: transform, opacity;
     }
 
@@ -127,4 +134,71 @@ a.link {
     &:focus-visible {
         outline: var(--outline-focus-visible);
     }
+}
+
+button {
+    cursor: pointer;
+
+    &.solid,
+    &.outline {
+        min-width: 10ch;
+
+        text-transform: uppercase;
+    }
+
+    &.solid {
+        background-color: var(--button-color);
+        color: var(--button-color-opposite);
+
+        padding: 0.5em 1em;
+
+        border: none;
+        border-radius: var(--border-radius);
+
+        transition: background-color var(--animation-duration-100) ease-in-out;
+
+        &:hover {
+            background-color: var(--button-color-hover);
+        }
+    }
+
+    &.outline {
+        background-color: var(--button-color-fade);
+        color: var(--button-color);
+
+        padding: 0.5em 1em;
+
+        border: 1px solid currentColor;
+        border-radius: var(--border-radius);
+
+        transition: var(--animation-duration-100) ease-in-out;
+        transition-property: background-color, color;
+
+        &:hover {
+            background-color: var(--button-color-hover);
+            color: var(--button-color-opposite);
+        }
+    }
+
+    &.primary {
+        --button-color: var(--color-primary);
+        --button-color-hover: var(--color-primary-darker);
+        --button-color-fade: var(--color-primary-fade);
+        --button-color-opposite: var(--color-primary-opposite);
+    }
+
+    &.danger {
+        --button-color: var(--color-danger);
+        --button-color-hover: var(--color-danger-darker);
+        --button-color-fade: var(--color-danger-fade);
+        --button-color-opposite: var(--color-danger-opposite);
+    }
+}
+
+.truncate {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
 }
