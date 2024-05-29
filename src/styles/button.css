@@ -1,0 +1,58 @@
+button {
+    cursor: pointer;
+
+    &.solid,
+    &.outline {
+        min-width: 10ch;
+
+        text-transform: uppercase;
+    }
+
+    &.solid {
+        background-color: var(--button-color);
+        color: var(--button-color-opposite);
+
+        padding: 0.5em 1em;
+
+        border: none;
+        border-radius: var(--border-radius);
+
+        transition: background-color var(--animation-duration-100) ease-in-out;
+
+        &:hover {
+            background-color: var(--button-color-hover);
+        }
+    }
+
+    &.outline {
+        background-color: var(--button-color-fade);
+        color: var(--button-color);
+
+        padding: 0.5em 1em;
+
+        border: 1px solid currentColor;
+        border-radius: var(--border-radius);
+
+        transition: var(--animation-duration-100) ease-in-out;
+        transition-property: background-color, color;
+
+        &:hover {
+            background-color: var(--button-color-hover);
+            color: var(--button-color-opposite);
+        }
+    }
+
+    &.primary {
+        --button-color: var(--color-primary);
+        --button-color-hover: var(--color-primary-darker);
+        --button-color-fade: var(--color-primary-fade);
+        --button-color-opposite: var(--color-primary-opposite);
+    }
+
+    &.danger {
+        --button-color: var(--color-danger);
+        --button-color-hover: var(--color-danger-darker);
+        --button-color-fade: var(--color-danger-fade);
+        --button-color-opposite: var(--color-danger-opposite);
+    }
+}
