@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    padding-block: 2rem;
+    padding-inline: var(--full-width-padding-inline);
+
+    nav {
+        > ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 4rem;
+
+            > li {
+                a {
+                    &.active {
+                        color: var(--color-primary);
+                    }
+                }
+            }
+        }
+    }
+}
