@@ -1,8 +1,8 @@
 <h1>Home Page</h1>
 
-<section class="tasks">
+<section>
     <h2>Tasks</h2>
-    <ul>
+    <ul class="tasks">
         @for (task of taskService.tasks; track task.id) {
             <li>
                 <div class="title truncate">{{ task.title }}</div>

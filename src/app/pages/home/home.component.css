@@ -1,11 +1,15 @@
-section.tasks {
+section {
     margin-block: 4rem;
 
     h2 {
         margin-block: 1rem;
     }
 
-    > ul {
+    .tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
         > li {
             background-color: var(--color-white);
             box-shadow: var(--box-shadow-subtle);
