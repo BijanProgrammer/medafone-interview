@@ -14,13 +14,13 @@
     --color-primary: hsl(160deg 50% 30%);
     --color-primary-lighter: hsl(160deg 50% 34%);
     --color-primary-darker: hsl(160deg 50% 26%);
-    --color-primary-fade: hsl(160deg 50% 95%);
+    --color-primary-fade: hsl(160deg 10% 90%);
     --color-primary-opposite: var(--color-gray-98);
 
     --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
     --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
 
-    --border-radius: 0.25rem;
+    --border-radius: 0.5rem;
 
     --outline-focus-visible: 0.2rem dashed var(--color-gray-10);
 
@@ -81,7 +81,7 @@ img {
 }
 
 body {
-    background-color: var(--color-gray-98);
+    background-color: var(--color-primary-fade);
     color: var(--color-gray-10);
 
     font-size: 1.6rem;

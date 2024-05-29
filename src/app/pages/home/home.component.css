@@ -1,0 +1,43 @@
+section.tasks {
+    margin-block: 4rem;
+
+    h2 {
+        margin-block: 1rem;
+    }
+
+    > ul {
+        > li {
+            background-color: var(--color-gray-98);
+
+            display: grid;
+            grid-template-areas: "title actions" "description actions";
+            grid-template-columns: 1fr auto;
+            align-items: center;
+
+            padding: 2rem;
+
+            border-radius: var(--border-radius);
+
+            .title {
+                grid-area: title;
+
+                font-size: 1.8rem;
+                font-weight: 700;
+            }
+
+            .description {
+                grid-area: description;
+            }
+
+            .actions {
+                grid-area: actions;
+
+                display: flex;
+                gap: 1rem;
+
+                button {
+                }
+            }
+        }
+    }
+}
