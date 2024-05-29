@@ -6,6 +6,10 @@ header {
     padding-block: 2rem;
     padding-inline: var(--full-width-padding-inline);
 
+    .logo {
+        font-size: 2rem;
+    }
+
     nav {
         > ul {
             display: flex;

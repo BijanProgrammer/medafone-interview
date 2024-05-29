@@ -32,9 +32,7 @@
 
     --border-radius: 0.5rem;
 
-    --outline-focus-visible: 0.2rem dashed var(--color-gray-10);
-
-    --full-width: 120rem;
+    --full-width: 80rem;
     --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
 
     --animation-duration-100: 0.1s;
@@ -54,6 +52,8 @@
 
 html {
     color-scheme: light;
+    accent-color: var(--color-primary);
+    caret-color: var(--color-primary);
 
     scroll-behavior: smooth;
     scroll-padding: 2rem;

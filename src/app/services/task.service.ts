@@ -20,6 +20,10 @@ export class TaskService {
         return [...this._tasks];
     }
 
+    public findById(id: string): TaskModel | null {
+        return this.tasks.find((task) => task.id === id) ?? null;
+    }
+
     public addTask(task: TaskModel): void {
         // [BIJAN] TODO: Add validation here or before this method is called.
         this._tasks.push(task);
