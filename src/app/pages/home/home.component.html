@@ -8,7 +8,7 @@
                 <div class="title truncate">{{ task.title }}</div>
                 <div class="description">{{ task.description }}</div>
                 <div class="actions">
-                    <a class="solid primary" [routerLink]="['/task', {id: task.id}]">Edit</a>
+                    <a class="solid primary" [routerLink]="['/task', task.id]">Edit</a>
                     <button class="outline danger">Remove</button>
                 </div>
             </li>
